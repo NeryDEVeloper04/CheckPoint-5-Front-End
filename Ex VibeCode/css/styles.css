@@ -1,22 +1,3 @@
-/* ==========================================================================
-   BROTA — styles.css
-   O Tailwind cuida do layout e dos utilitários. Aqui ficam apenas as coisas
-   que o Tailwind não resolve bem: base global, fundos decorativos, animações
-   e ajustes de acessibilidade.
-
-   Índice
-   1. Variáveis (tokens)
-   2. Base
-   3. Acessibilidade (foco, skip link)
-   4. Fundos decorativos
-   5. Animações do painel (hero)
-   6. Preferência por movimento reduzido
-   ========================================================================== */
-
-
-/* 1. VARIÁVEIS (tokens) ----------------------------------------------------
-   Espelham as cores definidas em js/tailwind.config.js. Mantenha os dois
-   arquivos sincronizados ao trocar a paleta. */
 :root {
   --color-moss: #1B3B2B;
   --color-mint: #4E9F3D;
@@ -25,10 +6,8 @@
 }
 
 
-/* 2. BASE ------------------------------------------------------------------ */
 html {
   scroll-behavior: smooth;
-  /* Compensa a altura do header fixo ao navegar por âncoras (#recursos etc.) */
   scroll-padding-top: 5rem;
 }
 
@@ -45,16 +24,12 @@ body {
   color: #fff;
 }
 
-
-/* 3. ACESSIBILIDADE ---------------------------------------------------------
-   Foco visível para quem navega por teclado. */
 :focus-visible {
   outline: 2px solid var(--color-mint);
   outline-offset: 3px;
   border-radius: 6px;
 }
 
-/* Link "Pular para o conteúdo": invisível até receber foco */
 .skip-link {
   position: absolute;
   left: 1rem;
@@ -71,10 +46,6 @@ body {
   top: 1rem;
 }
 
-
-/* 4. FUNDOS DECORATIVOS ------------------------------------------------------ */
-
-/* Grade fina estilo Linear/Vercel, que desvanece nas bordas */
 .bg-grid {
   background-image:
     linear-gradient(to right, rgb(27 59 43 / 0.06) 1px, transparent 1px),
@@ -84,18 +55,11 @@ body {
           mask-image: radial-gradient(ellipse 80% 70% at 60% 30%, #000 30%, transparent 100%);
 }
 
-/* Padrão de folhas (arquivo em images/patterns) para a seção escura */
 .bg-leaves {
   background-image: url("../images/patterns/leaves.svg");
   background-size: 120px 120px;
 }
 
-
-/* 5. ANIMAÇÕES DO PAINEL (HERO) ----------------------------------------------
-   Único momento de movimento da página: ao carregar, o anel de progresso
-   se desenha e as barras do gráfico crescem em sequência. */
-
-/* Anel: circunferência = 2π × 52 ≈ 327. O offset 72 equivale a 78% de progresso. */
 .ring-progress {
   stroke-dasharray: 327;
   stroke-dashoffset: 72;
@@ -106,7 +70,6 @@ body {
   from { stroke-dashoffset: 327; }
 }
 
-/* Barras: o atraso de cada uma vem da variável --i definida inline no HTML */
 .bar-grow {
   transform-origin: bottom;
   animation: bar-grow 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
@@ -118,7 +81,6 @@ body {
 }
 
 
-/* 6. MOVIMENTO REDUZIDO ------------------------------------------------------ */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
 

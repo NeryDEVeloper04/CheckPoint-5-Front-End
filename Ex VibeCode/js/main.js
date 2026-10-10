@@ -1,19 +1,6 @@
-/* ==========================================================================
-   BROTA — main.js
-   JavaScript puro, sem dependências. Três responsabilidades:
-   1. Menu mobile (abrir/fechar)
-   2. Contadores animados da seção de métricas
-   3. Ano atual no rodapé
-   ========================================================================== */
-
 (function () {
   'use strict';
 
-  /* ------------------------------------------------------------------------
-     1. MENU MOBILE
-     O botão alterna a visibilidade do painel e atualiza aria-expanded
-     para leitores de tela.
-     ------------------------------------------------------------------------ */
   const menuButton = document.getElementById('menu-button');
   const mobileMenu = document.getElementById('mobile-menu');
 
@@ -28,12 +15,10 @@
       setMenu(!isOpen);
     });
 
-    // Fecha ao clicar em qualquer link do menu
     mobileMenu.querySelectorAll('a').forEach((link) => {
       link.addEventListener('click', () => setMenu(false));
     });
 
-    // Fecha com a tecla Esc e devolve o foco ao botão
     document.addEventListener('keydown', (event) => {
       if (event.key === 'Escape' && menuButton.getAttribute('aria-expanded') === 'true') {
         setMenu(false);
@@ -42,16 +27,7 @@
     });
   }
 
-  /* ------------------------------------------------------------------------
-     2. CONTADORES ANIMADOS
-     Cada elemento [data-counter] define:
-       data-target   → valor final (ex.: 500 ou 12.4)
-       data-decimals → casas decimais (opcional, padrão 0)
-       data-prefix   → texto antes do número (ex.: "+")
-       data-suffix   → texto depois do número (ex.: "%")
-     O HTML já traz o valor final escrito: sem JS (ou com movimento reduzido)
-     o número aparece direto, sem animação.
-     ------------------------------------------------------------------------ */
+
   const counters = document.querySelectorAll('[data-counter]');
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -85,7 +61,7 @@
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             animateCounter(entry.target);
-            obs.unobserve(entry.target); // anima só uma vez
+            obs.unobserve(entry.target);
           }
         });
       },
@@ -95,9 +71,6 @@
     counters.forEach((el) => observer.observe(el));
   }
 
-  /* ------------------------------------------------------------------------
-     3. ANO NO RODAPÉ
-     ------------------------------------------------------------------------ */
   const yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 })();

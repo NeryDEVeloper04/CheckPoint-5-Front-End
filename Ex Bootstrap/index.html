@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shake Mania</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+
+  <nav class="navbar navbar-expand bg-dark sticky-top" data-bs-theme="dark">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#inicio">Shake<span class="text-shake">Mania</span></a>
+
+      <ul class="navbar-nav ms-auto flex-row align-items-center gap-1 gap-sm-2">
+        <li class="nav-item"><a class="nav-link" href="#inicio">Início</a></li>
+        <li class="nav-item"><a class="nav-link" href="#depoimentos">Depoimentos</a></li>
+        <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
+        <li class="nav-item">
+          <button type="button" class="btn btn-shake btn-sm" data-bs-toggle="modal" data-bs-target="#modalPedido">
+            Comprar agora
+          </button>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="modal fade" id="modalPedido" tabindex="-1" aria-labelledby="modalPedidoLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="modalPedidoLabel">Faça seu pedido:</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+        </div>
+
+        <div class="modal-body">
+          <div class="form-check mb-3">
+            <input class="form-check-input" type="checkbox" value="" id="kit">
+            <label class="form-check-label" for="kit">Combo degustação (3 minis)</label>
+          </div>
+          <div class="form-check mb-3">
+            <input class="form-check-input" type="checkbox" value="" id="shake1">
+            <label class="form-check-label" for="shake1">1 milk shake de 500ml</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="shake5">
+            <label class="form-check-label" for="shake5">5 milk shakes de 500ml</label>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary">Ir para o carrinho</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <section id="inicio" class="bg-light py-5">
+      <div class="container">
+        <div class="row align-items-center g-4">
+          <div class="col-lg-6">
+            <h1 class="display-5 fw-bold">Milk shake cremoso, batido na hora.</h1>
+            <p class="lead fs-6 text-secondary">
+              A Shake Mania prepara milk shakes com sorvete artesanal e ingredientes
+              selecionados, sempre batidos na hora para você.
+            </p>
+          </div>
+          <div class="col-lg-6">
+            <img src="./img/milshake.jpg" class="img-fluid rounded w-100" alt="Imagem de destaque da Shake Mania">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="depoimentos" class="bg-white py-5">
+      <div class="container text-center">
+        <p class="text-shake fw-bold text-uppercase small mb-1">Quem já experimentou</p>
+        <h2 class="fw-bold mb-5">O que dizem nossos clientes</h2>
+
+        <div id="carouselDepoimentos" class="carousel slide" data-bs-theme="dark" data-bs-ride="carousel">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselDepoimentos" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Depoimento 1"></button>
+            <button type="button" data-bs-target="#carouselDepoimentos" data-bs-slide-to="1" aria-label="Depoimento 2"></button>
+            <button type="button" data-bs-target="#carouselDepoimentos" data-bs-slide-to="2" aria-label="Depoimento 3"></button>
+          </div>
+
+          <div class="carousel-inner pb-5">
+
+            <div class="carousel-item active">
+              <div class="row justify-content-center">
+                <div class="col-md-8 col-lg-6">
+                  <div class="text-warning mb-2">★★★★★</div>
+                  <p class="fst-italic">"O melhor milk shake que já tomei. Cremoso e sempre geladinho."</p>
+                  <div class="d-flex justify-content-center align-items-center gap-2">
+                    <img src="img/avatar-1.svg" class="rounded-circle" width="40" height="40" alt="Foto de Marina Alves">
+                    <div class="text-start lh-sm">
+                      <strong class="d-block small">Marina Alves</strong>
+                      <small class="text-secondary">Cliente desde 2023</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="carousel-item">
+              <div class="row justify-content-center">
+                <div class="col-md-8 col-lg-6">
+                  <div class="text-warning mb-2">★★★★</div>
+                  <p class="fst-italic">"O sabor de morango é incrível e a porção é bem generosa. Virou meu vício."</p>
+                  <div class="d-flex justify-content-center align-items-center gap-2">
+                    <img src="img/avatar-2.svg" class="rounded-circle" width="40" height="40" alt="Foto de Rafael Costa">
+                    <div class="text-start lh-sm">
+                      <strong class="d-block small">Rafael Costa</strong>
+                      <small class="text-secondary">Cliente desde 2024</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="carousel-item">
+              <div class="row justify-content-center">
+                <div class="col-md-8 col-lg-6">
+                  <div class="text-warning mb-2">★★★</div>
+                  <p class="fst-italic">"Adoro saber que usam ingredientes de qualidade. Entrega rápida e atendimento ótimo."</p>
+                  <div class="d-flex justify-content-center align-items-center gap-2">
+                    <img src="img/avatar-3.svg" class="rounded-circle" width="40" height="40" alt="Foto de Camila Souza">
+                    <div class="text-start lh-sm">
+                      <strong class="d-block small">Camila Souza</strong>
+                      <small class="text-secondary">Cliente desde 2025</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselDepoimentos" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Anterior</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselDepoimentos" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Próximo</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="bg-light py-5">
+      <div class="container">
+        <h2 class="fw-bold text-center mb-4">Perguntas frequentes</h2>
+
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="accordion" id="accordionFaq">
+
+              <div class="accordion-item">
+                <h3 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="false" aria-controls="faq1">
+                    Quais sabores vocês têm?
+                  </button>
+                </h3>
+                <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                  <div class="accordion-body">
+                    Temos morango, chocolate, baunilha, ovomaltine e doce de leite, além de sabores especiais que mudam todo mês.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <h3 class="accordion-header">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="true" aria-controls="faq2">
+                    Vocês entregam na minha região?
+                  </button>
+                </h3>
+                <div id="faq2" class="accordion-collapse collapse show" data-bs-parent="#accordionFaq">
+                  <div class="accordion-body">
+                    Sim! Entregamos em toda a cidade, com prazo médio de 30 a 50 minutos, em embalagem térmica para chegar gelado.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <h3 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">
+                    Posso personalizar meu milk shake?
+                  </button>
+                </h3>
+                <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                  <div class="accordion-body">
+                    Pode sim! Você escolhe o sabor, a cobertura e pode adicionar chantilly, calda ou granulado.
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-dark text-light text-center py-4">
+    <small class="text-secondary">© 2026 Shake Mania por Arthur Meneghin Nery. Marca fictícia criada para fins didáticos.</small>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

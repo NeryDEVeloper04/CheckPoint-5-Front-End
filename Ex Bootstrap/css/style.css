@@ -1,0 +1,19 @@
+:root {
+  --cor-shake: var(--bs-pink);
+}
+
+.text-shake {
+  color: var(--cor-shake);
+}
+
+.btn-shake {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: var(--cor-shake);
+  --bs-btn-border-color: var(--cor-shake);
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #b02a6b;
+  --bs-btn-hover-border-color: #b02a6b;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #b02a6b;
+  --bs-btn-active-border-color: #b02a6b;
+}

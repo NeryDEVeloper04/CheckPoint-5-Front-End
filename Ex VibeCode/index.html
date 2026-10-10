@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Brota | Reduza a pegada de carbono da sua empresa</title>
+  <meta name="description" content="A Brota mede as emissões da sua pequena empresa e transforma cada corte em missão para a equipe. Comece grátis.">
+  <meta name="theme-color" content="#F7F9F6">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+
+  <!-- Fontes: Bricolage Grotesque (títulos) e DM Sans (texto) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Tailwind via CDN (versão fixa) + configuração do projeto.
+       Para produção, troque pelo Tailwind CLI (veja o README). -->
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="js/tailwind.config.js"></script>
+
+  <!-- CSS próprio -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body class="font-sans text-base text-ink">
+
+  <a href="#conteudo" class="skip-link">Pular para o conteúdo</a>
+
+  <!-- =====================================================================
+       HEADER / NAVEGAÇÃO
+       ===================================================================== -->
+  <header class="sticky top-0 z-50 border-b border-moss/10 bg-paper/85 backdrop-blur">
+    <nav class="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8" aria-label="Principal">
+
+      <!-- Logo -->
+      <a href="#" class="flex items-center gap-2.5" aria-label="Brota, página inicial">
+        <img src="images/logo-mark.svg" width="32" height="32" alt="">
+        <span class="font-display text-xl font-semibold tracking-tight text-moss">brota</span>
+      </a>
+
+      <!-- Links (desktop) -->
+      <div class="hidden items-center gap-8 md:flex">
+        <a href="#recursos" class="text-sm font-medium text-ink/80 transition hover:text-moss">Recursos</a>
+        <a href="#resultados" class="text-sm font-medium text-ink/80 transition hover:text-moss">Resultados</a>
+        <a href="#" class="text-sm font-medium text-ink/80 transition hover:text-moss">Entrar</a>
+        <a href="#" class="rounded-lg bg-moss px-4 py-2 text-sm font-semibold text-paper transition hover:bg-moss-700">Comece Grátis</a>
+      </div>
+
+      <!-- Botão do menu (mobile) -->
+      <button id="menu-button" type="button"
+              class="grid h-10 w-10 place-items-center rounded-lg border border-moss/15 text-moss md:hidden"
+              aria-expanded="false" aria-controls="mobile-menu" aria-label="Abrir menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <path d="M4 7h16M4 12h16M4 17h16"/>
+        </svg>
+      </button>
+    </nav>
+
+    <!-- Painel do menu mobile (controlado por js/main.js) -->
+    <div id="mobile-menu" class="hidden border-t border-moss/10 bg-paper md:hidden">
+      <div class="mx-auto flex max-w-6xl flex-col gap-1 px-4 py-4 sm:px-6">
+        <a href="#recursos" class="rounded-lg px-3 py-2.5 font-medium text-ink hover:bg-moss/5">Recursos</a>
+        <a href="#resultados" class="rounded-lg px-3 py-2.5 font-medium text-ink hover:bg-moss/5">Resultados</a>
+        <a href="#" class="rounded-lg px-3 py-2.5 font-medium text-ink hover:bg-moss/5">Entrar</a>
+        <a href="#" class="mt-2 rounded-lg bg-moss px-4 py-3 text-center font-semibold text-paper">Comece Grátis</a>
+      </div>
+    </div>
+  </header>
+
+
+  <main id="conteudo">
+
+    <!-- =====================================================================
+         1. HERO
+         Texto à esquerda, mockup do painel à direita (empilha no mobile).
+         ===================================================================== -->
+    <section class="relative overflow-hidden">
+      <!-- Grade decorativa de fundo (css/styles.css → .bg-grid) -->
+      <div class="bg-grid pointer-events-none absolute inset-0" aria-hidden="true"></div>
+
+      <div class="relative mx-auto grid max-w-6xl items-center gap-14 px-4 pb-20 pt-12 sm:px-6 sm:pt-16 lg:grid-cols-12 lg:gap-10 lg:px-8 lg:pb-28 lg:pt-24">
+
+        <!-- Coluna de texto -->
+        <div class="lg:col-span-5">
+          <h1 class="font-display text-4xl font-bold leading-[1.05] tracking-tight text-moss text-balance sm:text-5xl xl:text-6xl">
+            Reduza a pegada de carbono da sua empresa como quem sobe de nível.
+          </h1>
+
+          <p class="mt-6 max-w-md text-lg leading-relaxed text-ink/85">
+            A Brota mede as emissões do seu negócio, transforma cada corte em uma missão semanal e mostra o avanço da equipe toda. Sem planilhas e sem consultoria cara.
+          </p>
+
+          <div class="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
+            <a href="#" class="inline-flex items-center justify-center rounded-xl bg-moss px-6 py-3.5 text-base font-semibold text-paper shadow-float transition hover:bg-moss-700">
+              Comece Grátis
+            </a>
+            <a href="#recursos" class="inline-flex items-center justify-center rounded-xl border border-moss/20 px-6 py-3.5 text-base font-semibold text-moss transition hover:border-moss/40 hover:bg-white">
+              Ver como funciona
+            </a>
+          </div>
+
+          <p class="mt-4 text-sm text-ink/70">Sem cartão de crédito. Configuração em 5 minutos.</p>
+        </div>
+
+        <!-- Coluna do mockup -->
+        <div class="relative lg:col-span-7">
+
+          <!-- Janela do painel -->
+          <div class="overflow-hidden rounded-2xl border border-moss/10 bg-white shadow-card" role="img"
+               aria-label="Ilustração do painel da Brota com pegada de outubro, nível da equipe, evolução mensal e missões da semana">
+
+            <!-- Barra superior do painel -->
+            <div class="flex items-center justify-between border-b border-moss/10 px-4 py-3 sm:px-5">
+              <div class="flex items-center gap-2.5">
+                <img src="images/logo-mark.svg" width="22" height="22" alt="">
+                <span class="text-sm font-semibold text-moss">Padaria Trigo &amp; Cia</span>
+              </div>
+              <span class="rounded-full bg-paper px-3 py-1 text-xs font-medium text-ink/80">Outubro 2026</span>
+            </div>
+
+            <!-- Corpo do painel -->
+            <div class="grid gap-4 p-4 sm:grid-cols-5 sm:p-5">
+
+              <!-- Coluna esquerda: pegada e nível -->
+              <div class="flex flex-col gap-4 sm:col-span-2">
+
+                <!-- Anel de progresso da meta -->
+                <div class="rounded-xl border border-moss/10 p-4">
+                  <p class="text-xs font-medium text-ink/70">Pegada de outubro</p>
+                  <div class="mt-3 flex items-center gap-4">
+                    <div class="relative h-20 w-20 shrink-0">
+                      <svg viewBox="0 0 120 120" class="h-full w-full -rotate-90" aria-hidden="true">
+                        <circle cx="60" cy="60" r="52" fill="none" stroke="#1B3B2B" stroke-opacity="0.1" stroke-width="12"/>
+                        <circle class="ring-progress" cx="60" cy="60" r="52" fill="none" stroke="#4E9F3D" stroke-width="12" stroke-linecap="round"/>
+                      </svg>
+                      <span class="absolute inset-0 grid place-items-center font-display text-lg font-bold text-moss">78%</span>
+                    </div>
+                    <div>
+                      <p class="font-display text-2xl font-bold leading-none text-moss">4,2 t</p>
+                      <p class="mt-1 text-xs text-ink/70">de CO₂ no mês</p>
+                      <p class="mt-2 text-xs font-semibold text-mint-dark">18% menos que setembro</p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Nível da equipe -->
+                <div class="rounded-xl bg-moss p-4 text-paper">
+                  <div class="flex items-baseline justify-between">
+                    <p class="font-display text-lg font-semibold">Nível 7</p>
+                    <p class="text-xs text-paper/80">Raiz forte</p>
+                  </div>
+                  <div class="mt-3 h-2 overflow-hidden rounded-full bg-paper/15">
+                    <div class="h-full rounded-full bg-mint" style="width: 64%"></div>
+                  </div>
+                  <p class="mt-2 text-xs text-paper/80">640 de 1.000 pontos para o nível 8</p>
+                  <p class="mt-3 border-t border-paper/15 pt-3 text-xs font-medium text-mint-light">6 semanas seguidas cumprindo a meta</p>
+                </div>
+              </div>
+
+              <!-- Coluna direita: gráfico e missões -->
+              <div class="flex flex-col gap-4 sm:col-span-3">
+
+                <!-- Gráfico de barras: emissões dos últimos 6 meses -->
+                <div class="rounded-xl border border-moss/10 p-4">
+                  <p class="text-xs font-medium text-ink/70">Emissões nos últimos 6 meses</p>
+                  <div class="mt-4 flex h-28 items-end gap-2" aria-hidden="true">
+                    <div class="bar-grow w-full rounded-md bg-moss/15" style="--i:0; height:100%"></div>
+                    <div class="bar-grow w-full rounded-md bg-moss/15" style="--i:1; height:92%"></div>
+                    <div class="bar-grow w-full rounded-md bg-moss/15" style="--i:2; height:85%"></div>
+                    <div class="bar-grow w-full rounded-md bg-moss/15" style="--i:3; height:78%"></div>
+                    <div class="bar-grow w-full rounded-md bg-moss/15" style="--i:4; height:70%"></div>
+                    <div class="bar-grow w-full rounded-md bg-mint"    style="--i:5; height:58%"></div>
+                  </div>
+                  <div class="mt-1.5 flex gap-2 text-center text-[11px] text-ink/70" aria-hidden="true">
+                    <span class="w-full">Mai</span><span class="w-full">Jun</span><span class="w-full">Jul</span>
+                    <span class="w-full">Ago</span><span class="w-full">Set</span><span class="w-full font-semibold text-moss">Out</span>
+                  </div>
+                </div>
+
+                <!-- Missões da semana -->
+                <div class="rounded-xl border border-moss/10 p-4">
+                  <p class="text-xs font-medium text-ink/70">Missões da semana</p>
+                  <ul class="mt-3 space-y-2">
+
+                    <!-- Missão concluída -->
+                    <li class="flex items-center gap-3 rounded-lg bg-paper px-3 py-2.5">
+                      <span class="grid h-5 w-5 shrink-0 place-items-center rounded-full bg-mint text-white">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>
+                      </span>
+                      <span class="flex-1 text-sm text-ink line-through decoration-ink/30">Trocar 10 lâmpadas por LED</span>
+                      <span class="text-xs font-semibold text-mint-dark">+120</span>
+                    </li>
+
+                    <!-- Missão em andamento -->
+                    <li class="flex items-center gap-3 rounded-lg bg-paper px-3 py-2.5">
+                      <span class="h-5 w-5 shrink-0 rounded-full border-2 border-mint"></span>
+                      <span class="flex-1 text-sm text-ink">Juntar 2 entregas por rota</span>
+                      <span class="text-xs font-semibold text-ink/70">1/2</span>
+                    </li>
+
+                    <!-- Missão pendente -->
+                    <li class="flex items-center gap-3 rounded-lg bg-paper px-3 py-2.5">
+                      <span class="h-5 w-5 shrink-0 rounded-full border-2 border-moss/20"></span>
+                      <span class="flex-1 text-sm text-ink">Desligar equipamentos ao fechar</span>
+                      <span class="text-xs font-semibold text-ink/70">+80</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Notificação flutuante (some em telas muito pequenas para não cobrir o painel) -->
+          <div class="absolute -bottom-5 left-4 hidden items-center gap-3 rounded-xl border border-moss/10 bg-white px-4 py-3 shadow-float sm:flex lg:-left-8">
+            <span class="grid h-9 w-9 place-items-center rounded-full bg-mint/15">
+              <img src="images/icons/trophy.svg" width="18" height="18" alt="">
+            </span>
+            <div>
+              <p class="text-sm font-semibold text-moss">Missão concluída</p>
+              <p class="text-xs text-ink/70">A equipe ganhou 120 pontos</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =====================================================================
+         2. RECURSOS: grid de 3 cards
+         ===================================================================== -->
+    <section id="recursos" class="border-t border-moss/10 bg-white">
+      <div class="mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
+
+        <div class="max-w-2xl">
+          <h2 class="font-display text-3xl font-bold tracking-tight text-moss text-balance sm:text-4xl">
+            Tudo que a equipe precisa para cortar emissões na prática
+          </h2>
+          <p class="mt-4 text-lg leading-relaxed text-ink/85">
+            A Brota cuida da conta e do relatório. Vocês cuidam de decidir o que mudar e de comemorar quando der certo.
+          </p>
+        </div>
+
+        <div class="mt-12 grid gap-4 md:grid-cols-3 lg:gap-6">
+
+          <!-- Card 1: medir -->
+          <article class="flex flex-col rounded-2xl border border-moss/10 bg-paper p-6 lg:p-8">
+            <span class="grid h-11 w-11 place-items-center rounded-xl bg-mint/15">
+              <img src="images/icons/chart-line.svg" width="24" height="24" alt="">
+            </span>
+            <h3 class="mt-6 font-display text-xl font-semibold text-moss">Meça sem planilhas</h3>
+            <p class="mt-3 flex-1 leading-relaxed text-ink/85">
+              Informe a conta de luz, o combustível e as viagens do mês. A Brota converte tudo em CO₂ e mostra de onde vem a maior parte da sua pegada.
+            </p>
+            <ul class="mt-6 flex flex-wrap gap-2 text-xs font-medium text-moss">
+              <li class="rounded-full border border-moss/15 px-3 py-1">Energia</li>
+              <li class="rounded-full border border-moss/15 px-3 py-1">Transporte</li>
+              <li class="rounded-full border border-moss/15 px-3 py-1">Resíduos</li>
+            </ul>
+          </article>
+
+          <!-- Card 2: gamificação -->
+          <article class="flex flex-col rounded-2xl border border-moss/10 bg-paper p-6 lg:p-8">
+            <span class="grid h-11 w-11 place-items-center rounded-xl bg-mint/15">
+              <img src="images/icons/trophy.svg" width="24" height="24" alt="">
+            </span>
+            <h3 class="mt-6 font-display text-xl font-semibold text-moss">Missões, pontos e níveis</h3>
+            <p class="mt-3 flex-1 leading-relaxed text-ink/85">
+              Cada meta de redução vira uma missão curta. A equipe acumula pontos, sobe de nível e mantém sequências semanais, e a sustentabilidade vira rotina.
+            </p>
+            <ul class="mt-6 flex flex-wrap gap-2 text-xs font-medium text-moss">
+              <li class="rounded-full border border-moss/15 px-3 py-1">Pontos</li>
+              <li class="rounded-full border border-moss/15 px-3 py-1">Sequências</li>
+              <li class="rounded-full border border-moss/15 px-3 py-1">Ranking da equipe</li>
+            </ul>
+          </article>
+
+          <!-- Card 3: relatórios -->
+          <article class="flex flex-col rounded-2xl border border-moss/10 bg-paper p-6 lg:p-8">
+            <span class="grid h-11 w-11 place-items-center rounded-xl bg-mint/15">
+              <img src="images/icons/file-text.svg" width="24" height="24" alt="">
+            </span>
+            <h3 class="mt-6 font-display text-xl font-semibold text-moss">Relatórios prontos para enviar</h3>
+            <p class="mt-3 flex-1 leading-relaxed text-ink/85">
+              Gere todo mês um relatório claro da sua evolução. Use em propostas, licitações ou conversas com clientes que já pedem comprovação ambiental.
+            </p>
+            <ul class="mt-6 flex flex-wrap gap-2 text-xs font-medium text-moss">
+              <li class="rounded-full border border-moss/15 px-3 py-1">PDF mensal</li>
+              <li class="rounded-full border border-moss/15 px-3 py-1">Selo para clientes</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =====================================================================
+         3. PROVA SOCIAL / MÉTRICAS
+         Fundo verde musgo com padrão de folhas. Os números animam ao entrar
+         na tela (js/main.js). O valor final já está escrito no HTML.
+         ===================================================================== -->
+    <section id="resultados" class="bg-leaves bg-moss text-paper">
+      <div class="mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
+
+        <h2 class="max-w-2xl font-display text-3xl font-bold tracking-tight text-balance sm:text-4xl">
+          Pequenas empresas, resultado que dá para medir
+        </h2>
+
+        <!-- Métricas: separadas por divisórias porque são três indicadores independentes -->
+        <dl class="mt-12 grid divide-y divide-paper/15 sm:grid-cols-3 sm:divide-x sm:divide-y-0">
+
+          <div class="flex flex-col py-8 sm:px-8 sm:py-2 sm:first:pl-0 sm:last:pr-0">
+            <dt class="order-2 mt-2 text-paper/85">empresas ativas</dt>
+            <dd class="font-display text-5xl font-bold text-mint-light lg:text-6xl"
+                data-counter data-target="500" data-prefix="+">+500</dd>
+          </div>
+
+          <div class="flex flex-col py-8 sm:px-8 sm:py-2">
+            <dt class="order-2 mt-2 text-paper/85">toneladas de CO₂ economizadas</dt>
+            <dd class="font-display text-5xl font-bold text-mint-light lg:text-6xl"
+                data-counter data-target="12.4" data-decimals="1" data-suffix=" mil">12,4 mil</dd>
+          </div>
+
+          <div class="flex flex-col py-8 sm:px-8 sm:py-2 sm:last:pr-0">
+            <dt class="order-2 mt-2 text-paper/85">de redução média nos primeiros 6 meses</dt>
+            <dd class="font-display text-5xl font-bold text-mint-light lg:text-6xl"
+                data-counter data-target="31" data-suffix="%">31%</dd>
+          </div>
+        </dl>
+
+        <!-- Depoimento -->
+        <figure class="mt-16 max-w-3xl border-l-2 border-mint pl-6 sm:pl-8">
+          <blockquote>
+            <p class="font-display text-xl font-medium leading-snug text-balance sm:text-2xl">
+              Descobrimos que o forno e as entregas eram quase 70% da nossa pegada. Em seis meses cortamos 31%, e a equipe passou a disputar quem completa mais missões.
+            </p>
+          </blockquote>
+          <figcaption class="mt-5 text-sm text-paper/85">
+            <span class="font-semibold text-paper">Camila Rocha</span>, sócia da Padaria Trigo &amp; Cia, São Paulo
+          </figcaption>
+        </figure>
+
+        <!-- CTA final -->
+        <div class="mt-14">
+          <a href="#" class="inline-flex items-center justify-center rounded-xl bg-paper px-6 py-3.5 text-base font-semibold text-moss transition hover:bg-white">
+            Comece Grátis
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- =====================================================================
+       4. RODAPÉ
+       ===================================================================== -->
+  <footer class="border-t border-moss/10 bg-paper">
+    <div class="mx-auto flex max-w-6xl flex-col gap-6 px-4 py-10 sm:px-6 md:flex-row md:items-center md:justify-between lg:px-8">
+
+      <div class="flex items-center gap-2.5">
+        <img src="images/logo-mark.svg" width="28" height="28" alt="">
+        <span class="font-display text-lg font-semibold tracking-tight text-moss">brota</span>
+      </div>
+
+      <nav class="flex flex-wrap gap-x-6 gap-y-2 text-sm text-ink/80" aria-label="Rodapé">
+        <a href="#recursos" class="transition hover:text-moss">Recursos</a>
+        <a href="#resultados" class="transition hover:text-moss">Resultados</a>
+        <a href="#" class="transition hover:text-moss">Privacidade</a>
+        <a href="#" class="transition hover:text-moss">Termos de uso</a>
+        <a href="#" class="transition hover:text-moss">Contato</a>
+      </nav>
+
+      <p class="text-sm text-ink/70">© <span id="year">2026</span> Brota. Projeto fictício.</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript próprio -->
+  <script src="js/main.js"></script>
+</body>
+</html>
